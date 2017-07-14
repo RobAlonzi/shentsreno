@@ -1,0 +1,20 @@
+@import "../variables";
+
+.section-hero{
+	mark{
+		background: 0 0;
+		color: $main-color;
+		position: relative;
+
+		&:after{
+			background: rgba(39,174,96,.2);
+			bottom: 0;
+			content: "";
+			left: -0.08em;
+			position: absolute;
+			right: -0.08em;
+			height:45%;
+
+		}
+	}
+}

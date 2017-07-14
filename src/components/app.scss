@@ -1,0 +1,11 @@
+@import "../variables";
+
+
+.wrap{
+	align-items: center;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	margin-top: 40px;
+	min-height:100vh;
+}
