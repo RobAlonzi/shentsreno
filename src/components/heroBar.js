@@ -6,9 +6,14 @@ import "./heroBar.scss";
 const HeroBar = (props) => {
 	return (
 		<section className="section-hero">
-			<h2>Home improvements. <br/> Done <mark>better.</mark></h2>
-			<p>When it comes to finding a residential contractor for your home in the Toronto area, Shents Renovation is the right choice.</p>
-			<Link to="contact" className="btn btn-primary">Let's get building</Link>
+			<div className="hero-text">
+				<h2>Home improvements. <br/> Done <mark>better.</mark></h2>
+				<p>Looking for a contractor in Toronto? <br/> Shents Renovation is the right choice.</p>
+				<Link to="contact" className="btn btn-primary">Let's get building</Link>
+			</div>
+			<div className="hero-visual">
+				<img src="http://via.placeholder.com/200x250" />
+			</div>
 		</section>	
 	);
 }	

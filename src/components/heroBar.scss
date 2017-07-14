@@ -1,20 +1,62 @@
 @import "../variables";
 
 .section-hero{
-	mark{
-		background: 0 0;
-		color: $main-color;
-		position: relative;
+	display: flex;
+	justify-content: center;
 
-		&:after{
-			background: rgba(39,174,96,.2);
-			bottom: 0;
-			content: "";
-			left: -0.08em;
-			position: absolute;
-			right: -0.08em;
-			height:45%;
+	.hero-text{
 
+		h2{
+			font-size: 4em;
+			line-height: 0.95;
+			margin:0;
+		}
+
+		mark{
+			background: 0 0;
+			color: $main-color;
+			position: relative;
+
+			&:after{
+				background: rgba(39,174,96,.2);
+				bottom: 0;
+				content: "";
+				left: -0.08em;
+				position: absolute;
+				right: -0.08em;
+				height:45%;
+
+			}
+		}
+
+		p{
+			font-size: 1.5em;
+			line-height: 1.25;
+			margin: 30px 0;
+		}
+
+		a{
+			background: $main-color;
+			color: $font-color-inverted;
+			display: inline-block;
+			font-weight: 600;
+			letter-spacing: 0.1rem;
+			max-width: 100%;
+			min-width: 180px;
+			padding: 15px 30px;
+			text-align: center;
+			text-decoration: none;
+			text-transform: uppercase;
+
+			&:hover, &:active{
+				background: darken($main-color, 5%);
+			}
 		}
 	}
+
+	.hero-visual{
+		margin-left:75px;
+	}
+
+	
 }
