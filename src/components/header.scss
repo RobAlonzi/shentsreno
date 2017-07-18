@@ -3,10 +3,11 @@
 .main-header{
 	margin: 10px 0 125px;
 
-	.page-wrap{
+	.page-wrap-wide{
 		display: flex;
 		flex-direction: row;
 	}
+	
 	.logo-container{
 		flex-grow: 1;
 
@@ -18,12 +19,55 @@
 			font-weight: 700;
 			letter-spacing: -1px;
 			text-decoration: none;
+			transition: color .3s ease;
 		}
 	}
 	
 	.homestars-link{
 		svg{
 			width:100px;
+		}
+	}
+
+	.menu-icon{
+		width:40px;
+		height: 20px;
+		position: relative;
+		top:12px;
+		cursor: pointer;
+
+		> span{
+			background: #000;
+			display: block;
+			position: absolute;
+			height: 3px;
+			transition: .1s ease-in-out;
+			width:100%;
+
+			&:nth-child(1){
+				top: 0px;
+			}
+
+			&:nth-child(2){
+				top: 10px;
+			}
+
+			&:nth-child(3){
+				top: 20px;
+			}
+
+		}
+
+		&:hover, &:focus{
+			> span{
+				&:nth-child(1){
+					top: -5px;
+				}
+
+				&:nth-child(3){
+					top: 25px;
+				}
+			}
 		}
 	}
 }

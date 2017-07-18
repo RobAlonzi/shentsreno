@@ -16,8 +16,8 @@ export default class App extends Component{
 		return (
 			<div>
 				<HeroBar />
-				{/* <PageDetails />
-				<PictureFeed /> */}
+				<PageDetails />
+				<PictureFeed />
 			</div>
 		);
 	}

@@ -1,0 +1,26 @@
+@import "../variables";
+
+.section.section-details{
+	background: $background-alternate;
+	margin:0;
+	padding:40px 0;
+
+	.page-wrap{
+		display: flex;
+		justify-content: space-between;
+	}
+
+	.details-panel{
+		width:350px;
+		margin: 0 15px;
+
+		h2{
+			font-size: 1.65em;
+			text-align: center;
+		}
+
+		p{
+			text-align: justify;
+		}
+	}
+}

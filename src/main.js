@@ -13,12 +13,10 @@ ReactDOM.render(
 	<BrowserRouter>
 		<div>
 			<Header />
-			<div className="page-wrap">
-				<Switch>
-					<Route path="/contact" component={Contact} />
-					<Route exact path="/" component={App} />
-				</Switch>
-			</div>
+			<Switch>
+				<Route path="/contact" component={Contact} />
+				<Route exact path="/" component={App} />
+			</Switch>
 		</div>
 	</BrowserRouter>,
 	document.getElementById('root')

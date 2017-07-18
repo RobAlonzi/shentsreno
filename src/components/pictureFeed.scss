@@ -1,0 +1,20 @@
+@import "../variables";
+
+.section.section-picture-feed{
+	background: $background-alternate;
+	margin: 0;
+	padding:40px 0;
+
+	.picture-feed-container{
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-around;
+		margin-top:60px;
+
+		> .picture-feed-picture{
+			cursor: pointer;
+			width:325px;
+			margin-bottom: 20px;
+		}
+	}
+}

@@ -19,7 +19,16 @@ h1, h2, h3{
 	font-weight: 300;
 }
 
-.page-wrap{
+.page-wrap-wide{
 	max-width: 1650px;
 	margin: 0 auto;
+}
+
+.page-wrap{
+	max-width: 1250px;
+	margin: 0 auto;
+}
+
+.section{
+	margin: 100px 0;
 }

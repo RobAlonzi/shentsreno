@@ -4,21 +4,20 @@ import "./pageDetails.scss";
 
 const PageDetails = (props) => {
 	return (
-		<section className="section-details">
-			<div className="details-panel">
-				<img src={require('../images/hamburger.svg')} />
-				<h2>Hamburger</h2>
-				<p>Spicy jalapeno bacon ipsum dolor amet dolore jowl tempor consequat flank ribeye. Voluptate tri-tip ex exercitation nisi rump ball tip short ribs labore ipsum.</p>
-			</div>
-			<div className="details-panel">
-				<img src={require('../images/diamond.svg')} />
-				<h2>Diamonds</h2>
-				<p>Id ex pariatur sausage eu boudin nulla, tempor lorem do jowl swine. Excepteur corned beef proident kevin sirloin do. In non tri-tip ham shankle bone picanhavelit.</p>
-			</div>
-			<div className="details-panel">
-				<img src={require('../images/puzzle.svg')} />
-				<h2>Extreme Puzzling</h2>
-				<p>Bacon tail ribeye esse shank short ribs, rump ut elit. Beef filet mignon tongue brisket. Do short ribs magna culpa frankfurter fugiat.</p>
+		<section className="section section-details">
+			<div className="page-wrap">
+				<div className="details-panel">
+					<h2>Free Estimates</h2>
+					<p>We make your ideas a reality by providing you a free consultation session, followed by an estimate to let you know exactly what will be needed to bring your ideas to life.</p>
+				</div>
+				<div className="details-panel">
+					<h2>Competitive Rates</h2>
+					<p>Our services are provided to you at the most competitive rates, no matter the size of the project. Shents Renovation believes that no job is too big or small; we will take on the project with careful attention to quality and detail.</p>
+				</div>
+				<div className="details-panel">
+					<h2>Expert Services</h2>
+					<p>We have the experience, expertise, and knowledge to renovate your home and give it the rejuvenation you desire.</p>
+				</div>
 			</div>
 		</section>	
 	);

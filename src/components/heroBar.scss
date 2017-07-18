@@ -1,11 +1,15 @@
 @import "../variables";
 
-.section-hero{
-	display: flex;
-	justify-content: center;
+.section.section-hero{
+	margin-bottom: 200px;
+	margin-top: 200px;
+
+	.page-wrap{
+		display: flex;
+		justify-content: center;
+	}
 
 	.hero-text{
-
 		h2{
 			font-size: 4em;
 			line-height: 0.95;
