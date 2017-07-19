@@ -1,23 +1,28 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import { Provider } from 'react-redux';
+import { createStore, applyMiddleware } from 'redux';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
-import Header from "./components/header";
-import App from "./components/app";
+import Home from "./components/home";
 import Contact from "./components/contact";
+import renderComponentWithSidebar from "./components/renderComponentWithSidebar";
+
+import reducers from './reducers';
 
 import "normalize.css";
 import "./main.scss";
 
+const createStoreWithMiddleware = applyMiddleware()(createStore);
+
 ReactDOM.render(
-	<BrowserRouter>
-		<div>
-			<Header />
+	<Provider store={createStoreWithMiddleware(reducers)}>
+		<BrowserRouter>
 			<Switch>
-				<Route path="/contact" component={Contact} />
-				<Route exact path="/" component={App} />
+				<Route path="/contact" component={renderComponentWithSidebar(Contact)} />
+				<Route exact path="/" component={renderComponentWithSidebar(Home)} />
 			</Switch>
-		</div>
-	</BrowserRouter>,
+		</BrowserRouter>
+	</Provider>,
 	document.getElementById('root')
 );

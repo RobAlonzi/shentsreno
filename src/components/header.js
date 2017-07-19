@@ -1,24 +1,23 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import { connect } from "react-redux";
+
+import { toggleSidebar } from "../actions";
 
 import "./header.scss";
 
-export default class Header extends Component {
+
+class Header extends Component {
 	constructor(props){
 		super(props);
-
-		this.state = {
-			showMenu : false
-		}
 
 		this.showMenu = this.showMenu.bind(this);
 	}
 
 
 	showMenu(){
-		this.setState({
-			showMenu: !this.state.showMenu
-		});
+		console.log(this.props.sidebar);
+		this.props.toggleSidebar(this.props.sidebar)
 	}
 
 	render(){
@@ -52,3 +51,12 @@ export default class Header extends Component {
 	}
 	
 }	
+
+
+function mapStateToProps(state){
+	return { 
+		sidebar: state.sidebar
+	};
+}
+	
+export default connect(mapStateToProps, { toggleSidebar })(Header);

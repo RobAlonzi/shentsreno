@@ -1,10 +1,26 @@
 import React, { Component } from "react";
+import ReactModal from 'react-modal';
 
 import "./pictureFeed.scss";
 
 export default class PictureFeed extends Component{
 	constructor(props){
 		super(props);
+
+		this.state = {
+			showModal : false
+		}
+
+		this.handleOpenModal = this.handleOpenModal.bind(this);
+    	this.handleCloseModal = this.handleCloseModal.bind(this);
+	}
+
+	handleOpenModal() {
+		this.setState({ showModal: true });
+	}
+	
+	handleCloseModal() {
+		this.setState({ showModal: false });
 	}
 
 	renderPictures(){
@@ -28,7 +44,18 @@ export default class PictureFeed extends Component{
 			<section className="section section-picture-feed">
 				<div className="page-wrap-wide">
 					<div className="picture-feed-container">
+						<button onClick={this.handleOpenModal}>Trigger Modal</button>
 						{ this.renderPictures() }
+ 
+						<ReactModal 
+							isOpen={this.state.showModal}
+							contentLabel="onRequestClose Example"
+							onRequestClose={this.handleCloseModal}
+							className="Modal"
+							overlayClassName="Overlay">
+							<p>Modal text!</p>
+							<button onClick={this.handleCloseModal}>Close Modal</button>
+       					</ReactModal>
 					</div>
 				</div>
 			</section>

@@ -1,13 +1,12 @@
 import React, { Component } from "react";
 
-import Header from "./header";
 import HeroBar from "./heroBar";
 import PageDetails from "./pageDetails";
 import PictureFeed from "./pictureFeed";
 
-import "./app.scss";
+import "./home.scss";
 
-export default class App extends Component{
+export default class Home extends Component{
 	constructor(props){
 		super(props);
 	}
