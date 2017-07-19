@@ -1,5 +1,4 @@
 import React, {Component} from "react";
-import Sidebar from "react-sidebar";
 import { connect } from "react-redux";
 
 import { toggleSidebar } from "../actions";
@@ -18,34 +17,24 @@ export default function(ComposedComponent) {
 		}
 
 		componentDidMount(){
-			this.body = document.body;
-			this.wrapper = document.querySelector(".wrapper");
-			this.menu = document.querySelector("#sidebar-right")
-			this.mask = document.querySelector("#c-mask");
+			
+
 		}
 
 		componentWillReceiveProps(nextProps){
-			if(nextProps.sidebar)
-				this.openSidebar();
-			else
-				this.closeSidebar();
+			if(nextProps.sidebar){
+				document.body.classList.add('has-active-menu');
+				this.confineTabbing();
+			}
+			else{
+				document.body.classList.remove('has-active-menu');
+			}
 
 			return;
 		}
 
-		openSidebar(){
-			this.body.classList.add('has-active-menu');
-			this.wrapper.classList.add('has-push-right');
-			this.menu.classList.add('is-active');
-			this.mask.classList.add('is-active');
-
-		}
-
-		closeSidebar(){
-			this.body.classList.remove('has-active-menu');
-			this.wrapper.classList.remove('has-push-right');
-			this.menu.classList.remove('is-active');
-			this.mask.classList.remove('is-active');
+		confineTabbing(){
+			console.log("hello");
 		}
 
 		handleCloseSidebar(){
@@ -55,11 +44,11 @@ export default function(ComposedComponent) {
 		render(){
 			return (
 				<div>
-					<div className="wrapper">
+					<div className={`wrapper ${this.props.sidebar ? "has-push-right" : null} `}>
 						<Header />
 						<ComposedComponent {...this.props} />
 					</div>
-					<nav id="sidebar-right" className="sidebar-menu">
+					<nav id="sidebar-right" className={`sidebar-menu ${this.props.sidebar ? "is-active" : null}`}>
 						<button className="sidebar-close" onClick={this.handleCloseSidebar}>&larr; Close Menu</button>
 						<ul>
 							<li className="c-menu__item"><a href="#" className="c-menu__link">Home</a></li>
@@ -69,7 +58,7 @@ export default function(ComposedComponent) {
 							<li className="c-menu__item"><a href="#" className="c-menu__link">Contact</a></li>
 						</ul>
 					</nav>
-					<div id="c-mask" className="c-mask"></div>
+					<div id="c-mask" className={`c-mask ${this.props.sidebar ? "is-active" : null}`} onClick={this.handleCloseSidebar}></div>
 				</div>
 			);
 		}
