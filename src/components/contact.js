@@ -4,9 +4,11 @@ import "./contact.scss";
 
 const Contact = (props) => {
 	return (
-		<section className="section-details">
-			Contact!
-		</section>	
+		<div className="wrapper">
+			<section className="section-details">
+				Contact!
+			</section>
+		</div>
 	);
 }	
 

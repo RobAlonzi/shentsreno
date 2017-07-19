@@ -15,9 +15,9 @@ class Header extends Component {
 	}
 
 
-	showMenu(){
-		console.log(this.props.sidebar);
-		this.props.toggleSidebar(this.props.sidebar)
+	showMenu(e){
+		e.preventDefault();
+		this.props.toggleSidebar(true)
 	}
 
 	render(){

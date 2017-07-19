@@ -30,9 +30,9 @@ export default class PictureFeed extends Component{
 			pictures.push("http://via.placeholder.com/300x300");
 		}
 
-		return pictures.map(picture => {
+		return pictures.map((picture, i) => {
 			return (
-				<div className="picture-feed-picture">
+				<div key={i} className="picture-feed-picture">
 					<img src={picture} />
 				</div>
 			);
