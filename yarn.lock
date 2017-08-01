@@ -4698,7 +4698,7 @@ react-router@^4.1.1:
     prop-types "^15.5.4"
     warning "^3.0.0"
 
-react@^15.6.1:
+react@^15.5.4, react@^15.6.1:
   version "15.6.1"
   resolved "https://registry.yarnpkg.com/react/-/react-15.6.1.tgz#baa8434ec6780bde997cdc380b79cd33b96393df"
   dependencies:
@@ -4975,6 +4975,13 @@ ripemd160@^2.0.0, ripemd160@^2.0.1:
   dependencies:
     hash-base "^2.0.0"
     inherits "^2.0.1"
+
+rodal@^1.5.4:
+  version "1.5.4"
+  resolved "https://registry.yarnpkg.com/rodal/-/rodal-1.5.4.tgz#3af4f43762282a3bc3313f503093bebd9ddea9b8"
+  dependencies:
+    prop-types "^15.5.10"
+    react "^15.5.4"
 
 safe-buffer@^5.0.1, safe-buffer@^5.1.0, safe-buffer@~5.1.0:
   version "5.1.1"

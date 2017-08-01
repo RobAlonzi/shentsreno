@@ -1,19 +1,25 @@
 @import "../variables";
 
+$sidebar-width: 300px;
+
+
 body.has-active-menu {
   overflow: hidden;
 }
 
 .sidebar-menu {
-  background-color: #67b5d1;
+  background-color: #FFF;
+  display: flex;
+  flex-direction: column;
   height: 100%;
   overflow-y: scroll;
   position: fixed;
   right: 0;
+  text-align: center;
   transition: transform 0.3s;
-  transform: translateX(300px);
+  transform: translateX($sidebar-width);
   top: 0;
-  width: 300px;
+  width: $sidebar-width;
   z-index: 200;
 
   @include mq("phone"){
@@ -26,28 +32,51 @@ body.has-active-menu {
   }
 
   .sidebar-close {
-    display: block;
-    padding: 12px 24px;
-    width: 100%;
-    color: #fff;
-    background-color: #3184a1;
-    font-size: 14px;
-    border: none;
-    box-shadow: none;
-    border-radius: none;
+    background: transparent;
+    border:0;
     cursor: pointer;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 15px;
+    height: 15px;
+
+    &:before, &:after{
+      position: absolute;
+      content: '';
+      height: 2px;
+      width: 100%;
+      top: 50%;
+      left: 0;
+      margin-top: -1px;
+      background: #999;
+      border-radius: 100%;
+      transition: background .2s;
+
+    }
+
+    &:before{
+      transform: rotate(45deg);
+    }
+
+    &:after{
+      transform: rotate(-45deg);
+    }
+
+    &:hover{ &:before, &:after{ background: #333; } }
+  }
+
+  .logo-container{
+    margin: 40px 0 0;
   }
 
   > ul {
     list-style: none;
-    margin: 0;
+    margin: 20px 0;
     padding: 0;
 
-    .c-menu__item{
+    .sidebar-menu-item{
       display: block;
-      text-align: center;
-      border-top: solid 1px #b5dbe9;
-      border-bottom: solid 1px #3184a1;
 
       &:first-child{
         border-top: none;
@@ -57,18 +86,25 @@ body.has-active-menu {
         border-bottom: none;
       }
 
-      .c-menu__link {
+      .sidebar-menu-link {
+        color: $font-color;
         display: block;
         padding: 12px 24px;
-        color: #fff;
+        text-decoration: none;
+        text-transform: uppercase;
       }
 
     }
   }
 
+  .homestars-link{
+    width:30%;
+    margin: 0 auto;
+  }
+
 }
 
-.c-mask {
+.sidebar-mask {
   position: fixed;
   z-index: 100;
   top: 0;
@@ -92,7 +128,7 @@ body.has-active-menu {
   transition: transform .3s;
 
   &.has-push-right{
-    transform: translateX(-300px);
+    transform: translateX(-$sidebar-width);
 
     @include mq("phone"){
       transform: translateX(-100%);
