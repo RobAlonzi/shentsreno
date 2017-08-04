@@ -18,6 +18,7 @@ function startDev(){
 	const WebpackDevServer = require("webpack-dev-server");
 	const compiler = webpack(createWebpackConfig(true));
 	const server = new WebpackDevServer(compiler, {
+		headers: { "Access-Control-Allow-Origin": "http://localhost:3000", "Access-Control-Allow-Credentials": "true" },
 		contentBase: "./public/",
 		historyApiFallback: true,
 		hot: true

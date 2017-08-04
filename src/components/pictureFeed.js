@@ -1,21 +1,25 @@
 import React, { Component } from "react";
-import Rodal from 'rodal';
+import { connect } from "react-redux";
+import Rodal from "rodal";
 
-import 'rodal/lib/rodal.css';
+import { makeRequest } from "../actions";
+
+import "rodal/lib/rodal.css";
 import "./pictureFeed.scss";
 
-export default class PictureFeed extends Component{
+class PictureFeed extends Component{
 	constructor(props){
 		super(props);
-		this.state = { visible : false }
+		this.state = { visible : false, currentPicture: null };
+
+		this.props.makeRequest();
 
 		this.show = this.show.bind(this);
 		this.hide = this.hide.bind(this);
 	}
 
 	show(picture) {
-		console.log(picture);
-		this.setState({ visible: true });
+		this.setState({ visible: true, currentPicture : picture });
 	}
 	
 	hide() {
@@ -23,16 +27,12 @@ export default class PictureFeed extends Component{
 	}
 
 	renderPictures(){
-		let pictures = [];
+		return this.props.images.images.map((picture) => {
+			console.log(picture);
 
-		for(let i = 0, j = 20; i < j; i++){
-			pictures.push("http://via.placeholder.com/300x300");
-		}
-
-		return pictures.map((picture, i) => {
 			return (
-				<div onClick={() => this.show(picture)} key={i} className="picture-feed-picture">
-					<img src={picture} />
+				<div onClick={() => this.show(picture)} key={picture.id} className="picture-feed-picture">
+					<img src={picture.images.low_resolution.url} />
 				</div>
 			);
 		});
@@ -43,13 +43,21 @@ export default class PictureFeed extends Component{
 			<section className="section section-picture-feed">
 				<div className="page-wrap-wide">
 					<div className="picture-feed-container">
-						{ this.renderPictures() }
+						{  this.props.images.images ? this.renderPictures() : null }
 					</div>
 				</div>
 				<Rodal className="modal-container" visible={this.state.visible} onClose={this.hide} >
-					<img src="http://via.placeholder.com/300x300" />
+					{ this.state.currentPicture ? <img src={this.state.currentPicture.images.standard_resolution.url} /> : null }
 				</Rodal>
 			</section>
 		);
 	}
 } 
+
+function mapStateToProps(state){
+	return {
+		images: state.images
+	};
+}
+
+export default connect(state => { return  { images: state.images }}, { makeRequest })(PictureFeed);

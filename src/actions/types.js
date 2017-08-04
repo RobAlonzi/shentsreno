@@ -1,1 +1,5 @@
 export const TOGGLE_SIDEBAR = "TOGGLE_SIDEBAR";
+export const IMAGES_LOADING = "IMAGES_LOADING";
+export const IMAGES_SUCCESS = "IMAGES_SUCCESS";
+export const IMAGES_FAILED = "IMAGES_FAILED";
+export const IMAGES_MAX_ID = "IMAGES_MAX_ID";
