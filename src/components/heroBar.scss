@@ -42,6 +42,20 @@
 
 	.hero-visual{
 		margin-left:75px;
+		position: relative;
+		width:400px;
+
+		img{
+			max-width: 100%;
+			position: relative;
+		}
+
+		img:nth-child(1){
+			left:100px;
+			opacity: .2;
+			position: absolute;
+			top:-100px;
+		}
 	}
 
 	

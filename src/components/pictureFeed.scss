@@ -20,6 +20,12 @@
 			margin-bottom: 20px;
 			overflow: hidden;
 			width:500px;
+
+			img{ transition: transform 0.3s; }
+
+			&:hover, &:focus{
+				img { transform: scale(1.1); }
+			}
 		}
 	}
 
@@ -38,44 +44,52 @@
 }
 
 
-.modal-container .rodal-dialog{
-    max-height: 90vh;
-	max-width: 90vh;
+.modal-container{
 
-	> div {
-		align-items: center;
-		display: flex;
-		height: 100%;
-		flex-flow: column nowrap;
+	.rodal-mask{
+		background: rgba(0, 0, 0, .7);
+	}
 
-		.ig-user{
+
+	.rodal-dialog{
+		max-height: 90vh;
+		max-width: 90vh;
+
+		> div {
 			align-items: center;
-			border-bottom: 1px solid #000;
 			display: flex;
-			flex: 1 0 auto;
-			margin: 10px 0;
-			padding-bottom: 15px;
-			width: calc(100% - 50px);
+			height: 100%;
+			flex-flow: column nowrap;
 
-			img{
-				border-radius: 50%;
-				margin-right:20px;
-				width:75px;
+			.ig-user{
+				align-items: center;
+				border-bottom: 1px solid #000;
+				display: flex;
+				flex: 1 0 auto;
+				margin: 10px 0;
+				padding-bottom: 15px;
+				width: calc(100% - 50px);
+
+				img{
+					border-radius: 50%;
+					margin-right:20px;
+					width:75px;
+				}
+
+				span{
+					font-weight: bold;
+				}
 			}
 
-			span{
-				font-weight: bold;
+			> img{
+				flex: 2 2 auto;
+				max-height: 80%;
 			}
-		}
 
-		> img{
-			flex: 2 2 auto;
-			max-height: 80%;
-		}
-
-		.ig-content{
-			flex: 1 0 auto;
-			width: calc(100% - 50px);	
+			.ig-content{
+				flex: 1 0 auto;
+				width: calc(100% - 50px);	
+			}
 		}
 	}
 }

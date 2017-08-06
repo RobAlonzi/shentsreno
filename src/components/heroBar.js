@@ -3,7 +3,8 @@ import { Link } from "react-router-dom";
 
 import "./heroBar.scss";
 
-const HeroBar = (props) => {
+const HeroBar = ({ images }) => {
+
 	return (
 		<section className="section section-hero">
 			<div className="page-wrap">
@@ -13,11 +14,13 @@ const HeroBar = (props) => {
 					<Link to="contact" className="btn btn-primary">Let's get building</Link>
 				</div>
 				<div className="hero-visual">
-					<img src="http://via.placeholder.com/200x250" />
+					<img src={ require("../images/heroBar.jpg") } />
+					<img src={ require("../images/heroBar.jpg") } />
 				</div>
 			</div>
 		</section>	
 	);
-}	
+}
+
 
 export default HeroBar;

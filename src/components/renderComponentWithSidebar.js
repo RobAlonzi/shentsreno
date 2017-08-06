@@ -45,7 +45,7 @@ export default function(ComposedComponent) {
 		render(){
 			return (
 				<div>
-					<div className={`wrapper ${this.props.sidebar ? "has-push-right" : null} `}>
+					<div className={`wrapper ${this.props.sidebar ? "has-push-right" : ""} `}>
 						<Header />
 						<ComposedComponent {...this.props} />
 					</div>

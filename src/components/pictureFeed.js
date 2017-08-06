@@ -39,9 +39,9 @@ class PictureFeed extends Component{
 	renderPictures(){
 		return this.props.images.images.map((picture) => {
 			return (
-				<div onClick={() => this.show(picture)} key={picture.id} className="picture-feed-picture">
+				<a href="javascript:void(0)" onClick={() => this.show(picture)} key={picture.id} className="picture-feed-picture">
 					<img src={picture.images.standard_resolution.url} />
-				</div>
+				</a>
 			);
 		});
 	}
