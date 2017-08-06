@@ -1,8 +1,9 @@
 import axios from "axios";
 
 import {TOGGLE_SIDEBAR, IMAGES_LOADING, IMAGES_SUCCESS, IMAGES_FAILED, IMAGES_MAX_ID} from "./types";
+import "../../config/config";
 
-const API_KEY = "1936149319.ba4c844.4347392aed2f4247ab3fad37f5f3cfa7";
+const API_KEY = process.env.IG_API_KEY;
 const COUNT = 12;
 
 export function toggleSidebar(sidebarState){
@@ -51,13 +52,14 @@ export function makeRequest(){
 		if(maxId)
 			url += `&max_id=${maxId}`;
 
+
+		console.log(url);
+
 		axios.get(url).then(
 			res => {
-				console.log(res);
 				dispatch(parseImagesData(res.data))
 			},
 			err => {
-				console.log(err);
 				dispatch(parseImagesError(err))
 			}
 		);

@@ -12,15 +12,70 @@
 		margin-top:60px;
 
 		> .picture-feed-picture{
+			align-items: center;
 			cursor: pointer;
-			width:325px;
+			display: flex;
+			height:400px;
+			justify-content: center;
 			margin-bottom: 20px;
+			overflow: hidden;
+			width:500px;
 		}
 	}
+
+	.load-more-container{
+		margin: 10px 0;
+		text-align: center;
+
+		.btn.btn-primary{
+			cursor: pointer;
+			min-width: initial;
+			padding:10px 15px;
+			text-transform: none;
+		}
+	}
+
 }
 
 
 .modal-container .rodal-dialog{
-    height: 50vh !important;
-    width: 50% !important;
+    max-height: 90vh;
+	max-width: 90vh;
+
+	> div {
+		align-items: center;
+		display: flex;
+		height: 100%;
+		flex-flow: column nowrap;
+
+		.ig-user{
+			align-items: center;
+			border-bottom: 1px solid #000;
+			display: flex;
+			flex: 1 0 auto;
+			margin: 10px 0;
+			padding-bottom: 15px;
+			width: calc(100% - 50px);
+
+			img{
+				border-radius: 50%;
+				margin-right:20px;
+				width:75px;
+			}
+
+			span{
+				font-weight: bold;
+			}
+		}
+
+		> img{
+			flex: 2 2 auto;
+			max-height: 80%;
+		}
+
+		.ig-content{
+			flex: 1 0 auto;
+			width: calc(100% - 50px);	
+		}
+	}
 }

@@ -16,10 +16,8 @@ import reducers from './reducers';
 import "normalize.css";
 import "./main.scss";
 
-
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const enhancer = composeEnhancers(applyMiddleware(promiseMiddleware, thunk));
-
 
 
 ReactDOM.render(
