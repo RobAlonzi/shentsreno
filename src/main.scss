@@ -1,5 +1,9 @@
 @import "variables";
 
+* {
+	box-sizing: border-box;
+}
+
 html, body{
 	background:$background;
 	color: $font-color;
@@ -31,6 +35,10 @@ h1, h2, h3{
 
 .section{
 	margin: 100px 0;
+
+	@include mq("desktop"){
+		margin: 100px 20px;
+	}
 }
 
 .logo{

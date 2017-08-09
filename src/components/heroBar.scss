@@ -38,12 +38,22 @@
 			line-height: 1.25;
 			margin: 30px 0;
 		}
+
+		a.btn{
+			@include mq("phone"){
+				width:100%;
+			}
+		}
 	}
 
 	.hero-visual{
 		margin-left:75px;
 		position: relative;
 		width:400px;
+
+		@include mq("tablet-wide"){
+			display: none;
+		}
 
 		img{
 			max-width: 100%;

@@ -1,7 +1,7 @@
 @import "../variables";
 
 .main-header{
-	margin: 10px 0 125px;
+	margin: 10px 20px 125px;
 
 	.page-wrap-wide{
 		display: flex;
@@ -22,7 +22,7 @@
 		width:40px;
 		height: 20px;
 		position: relative;
-		top:12px;
+		top:6px;
 		cursor: pointer;
 
 		> span{
