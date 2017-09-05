@@ -11,7 +11,7 @@
 
 	.page-wrap-wide{
 		@include mq("phone"){
-			margin:0 15px;
+			margin:0 10px;
 		}
 	}
 
@@ -37,6 +37,10 @@
 				img { transform: scale(1.1); }
 			}
 		}
+	}
+
+	.picture-feed-loading{
+		text-align: center;
 	}
 
 	.load-more-container{
@@ -71,10 +75,8 @@
 		}
 
 		> div {
-			align-items: center;
-			display: flex;
 			height: 100%;
-			flex-flow: column nowrap;
+			text-align: center;
 
 			.ig-user{
 				align-items: center;
@@ -103,8 +105,7 @@
 			}
 
 			> img{
-				flex: 2 2 auto;
-				max-height: 70%;
+				max-height: 80%;
 
 				@include mq(675){
 					width: 100%;
@@ -112,8 +113,21 @@
 			}
 
 			.ig-content{
-				flex: 1 0 auto;
-				width: 100%;	
+				width: 100%;
+				
+				p{
+					text-align: center;
+				}
+			}
+
+			.mobile-close-modal{
+				display: none;
+
+				@include mq("tablet"){
+					display: block;
+					text-align: center;
+					margin-top:40px;
+				}
 			}
 		}
 	}

@@ -1,0 +1,16 @@
+.fadeInPage-enter {
+	opacity: 0.01;
+}
+  
+.fadeInPage-enter.fadeInPage-enter-active {
+	opacity: 1;
+	transition: opacity 250ms ease-in;
+}
+
+.fadeInPage-exit {
+	opacity: 1;
+}
+
+.fadeInPage-exit.fadeInPage-exit-active {
+	opacity: 0.01;
+}

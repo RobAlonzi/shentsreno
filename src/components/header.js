@@ -28,11 +28,6 @@ class Header extends Component {
 						<Link to="/" className="logo">SHENTS</Link>
 					</div>
 
-					{/* <div className="phone-container">
-						(416) 460-9335
-					</div> */}
-
-
 					<a className="menu-icon" onClick={this.showMenu} id="menu"><span></span><span></span><span></span></a>
 
 				

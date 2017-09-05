@@ -23,6 +23,16 @@ h1, h2, h3{
 	font-weight: 300;
 }
 
+h1{
+	font-size:3em;
+	margin:0;
+}
+
+a{
+	color:$main-color;
+	text-decoration: none;
+}
+
 .page-wrap-wide{
 	max-width: 1650px;
 	margin: 0 auto;
@@ -37,7 +47,7 @@ h1, h2, h3{
 	margin: 100px 0;
 
 	@include mq("desktop"){
-		margin: 100px 20px;
+		margin: 100px 10px;
 	}
 }
 
@@ -70,3 +80,4 @@ h1, h2, h3{
 		background: darken($main-color, 5%);
 	}
 }
+

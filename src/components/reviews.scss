@@ -1,0 +1,86 @@
+@import "../variables";
+
+.reviews-intro{
+	text-align: center;
+
+	@include mq("tablet"){
+		margin-top:50px;
+	}
+
+	.review-block{
+		position: relative;
+		width:70%;
+		margin:50px auto;
+
+		@include mq("tablet"){
+			width:80%;
+		}
+
+		@include mq("phone"){
+			width:90%;
+		}
+
+		blockquote{
+			line-height: 145%;
+			font-style: italic;
+			text-align: justify;
+
+			&:before{
+				content: "\201C";
+				font-size: 600%;
+				display: block;
+				position: absolute;
+				top:-5px;
+				left: 0;
+			}
+		}
+
+		.star-five{
+			background-image: url("http://www.shentsreno.com/build/css/img/star.png");
+			float: left;
+			width:57px;
+			height: 57px;
+			margin:5px;
+			position: relative;
+
+			span{
+				position: absolute;
+				top:18px;
+				left:18px;
+			}
+		}
+
+		cite{
+			display: block;
+			width:100%;
+			text-align: right;
+			margin-top:20px;
+
+			&:before{
+				content:"\2014";
+				margin-right:5px;
+			}
+		}
+	}
+
+	.reviews-read-more{
+		text-align: right;
+		width: 70%;
+		margin: 0 auto 50px;
+
+		@include mq("tablet"){
+			width:80%;
+		}
+
+		@include mq("phone"){
+			width:90%;
+		}
+	}
+}
+
+
+.reviews-read-more, .review-block{
+	@include mq("tablet"){
+		width:80%;
+	}
+}

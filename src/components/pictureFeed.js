@@ -49,14 +49,12 @@ class PictureFeed extends Component{
 	renderModalContent(){
 		return (
 			<div>
-				<div className="ig-user">
-					<img src={this.state.currentPicture.user.profile_picture} />
-					<span>{this.state.currentPicture.user.username} </span>
-				</div>
+
 				<img src={this.state.currentPicture.images.standard_resolution.url} />
 				<div className="ig-content">
 					<p>{ this.state.currentPicture.caption.text }</p>
 				</div>
+				<a href="javascript:void(0)" className="mobile-close-modal" onClick={this.hide}>Close</a>
 			</div>
 		);
 	}
@@ -90,7 +88,7 @@ class PictureFeed extends Component{
 					{ 
 						this.props.images.imagesLoading ?
 							<div className="picture-feed-loading">
-								I'M LOADING!
+							<img src={ require("../images/loading.gif") } />
 							</div>
 							: null
 					}
@@ -107,10 +105,10 @@ class PictureFeed extends Component{
 					this.state.currentPicture ?
 						<Rodal 
 							className="modal-container" 
-							width={ this.state.currentPicture.images.standard_resolution.width + 50 } 
-							height={ this.state.currentPicture.images.standard_resolution.height + 300 }  
-							visible={ this.state.visible} 
-							onClose={ this.hide} >
+							width={this.state.currentPicture.images.standard_resolution.width + 50 } 
+							height={this.state.currentPicture.images.standard_resolution.height + 300 }  
+							visible={this.state.visible} 
+							onClose={this.hide} >
 
 							{ this.renderModalContent() }
 							

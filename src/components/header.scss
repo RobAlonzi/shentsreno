@@ -3,6 +3,10 @@
 .main-header{
 	margin: 10px 20px 125px;
 
+	@include mq("phone"){
+		margin: 10px 10px 20px;
+	}
+
 	.page-wrap-wide{
 		display: flex;
 		flex-direction: row;

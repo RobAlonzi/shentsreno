@@ -4,16 +4,24 @@
 	margin-bottom: 200px;
 	margin-top: 200px;
 
+	@include mq("tablet-wide"){
+		margin-top: 40px;
+		margin-bottom: 20px;
+	}
+
 	.page-wrap{
 		display: flex;
 		justify-content: center;
 	}
 
 	.hero-text{
+		overflow: hidden;
+
 		h2{
 			font-size: 4em;
 			line-height: 0.95;
 			margin:0;
+			position: relative;
 		}
 
 		mark{
@@ -37,9 +45,14 @@
 			font-size: 1.5em;
 			line-height: 1.25;
 			margin: 30px 0;
+			position: relative;
 		}
 
 		a.btn{
+			&.js--add-fade-in{
+				animation: fade 0.7s linear 0.5s 1 forwards;
+			}
+
 			@include mq("phone"){
 				width:100%;
 			}
@@ -49,6 +62,7 @@
 	.hero-visual{
 		margin-left:75px;
 		position: relative;
+		overflow: hidden;
 		width:400px;
 
 		@include mq(900){
@@ -60,14 +74,74 @@
 			position: relative;
 			width:90%;
 		}
-
-		img:nth-child(1){
-			left:10%;
-			opacity: .2;
-			position: absolute;
-			top:-10%;
-		}
 	}
 
 	
 }
+
+.js--add-slide-in{
+	background:black;
+	display: block;
+	overflow: hidden;
+	position: absolute;
+	height: 110%;
+	top:0;
+	left:0;
+	animation-name: slideBox;
+	animation-duration: 1.5s;
+	animation-fill-mode: forwards;
+	animation-iteration-count: 1;
+	animation-timing-function: cubic-bezier(0.81, 0.15, 0.26, 0.99);
+	will-change: width, transform;
+	z-index: 99;
+
+	&.slide-green{
+		background: $main-color;
+	}
+
+	&.delay-5{
+		animation-delay: 0.5s;
+	}
+}
+
+.js--add-fade-in{
+	opacity: 0;
+	animation: fade 0.25s linear 0.5s 1 forwards, slide 0.7s linear 0.1s forwards;
+	display: inline-block;
+
+	&.delay-5{
+		animation: fade 0.25s linear 1s 1 forwards, slide 1.2s linear 0.1s forwards;
+	}
+}
+
+@keyframes slideBox {   
+	0% {  
+		width:0%;
+	}   
+	50% {     
+		width:100%;
+		transform: translateX(0%);
+	}
+	100%{
+		width:100%;
+		transform: translateX(102%);
+	}
+  }
+
+  @keyframes slide{
+	0% {  
+		transform: translateX(-10%);
+	}
+	100%{
+		transform: translateX(0%);
+	} 
+  }
+
+  @keyframes fade {   
+	0% {  
+		opacity: 0;
+	}
+	100%{
+		opacity: 1;
+	}
+  }
