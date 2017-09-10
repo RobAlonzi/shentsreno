@@ -1,4 +1,5 @@
 import axios from "axios";
+import jsonp from "jsonp";
 
 import {TOGGLE_SIDEBAR, IMAGES_LOADING, IMAGES_SUCCESS, IMAGES_FAILED, IMAGES_MAX_ID} from "./types";
 import "../../config/config";
@@ -43,7 +44,7 @@ function setImagesError(err){
 export function makeRequest(){
 	return (dispatch, getState) => {
 		const { images : { imagesMaxId : maxId, imagesError : error } } = getState();
-		let url = `https://igpi.ga/shentsrenovation/media/?count=${COUNT}`;
+		let url = `https://api.instagram.com/v1/users/1936149319/media/recent?access_token=${API_KEY}&count=${COUNT}`;
 
 		dispatch(setImagesLoading());
 		if(error)
@@ -52,16 +53,13 @@ export function makeRequest(){
 		if(maxId)
 			url += `&max_id=${maxId}`;
 
-		axios.get(url).then(
-			res => {
-				debugger;
-				dispatch(parseImagesData(res.data))
-			},
-			err => {
-				debugger;
+		jsonp(url, null, function (err, data) {
+			if (err) {
 				dispatch(parseImagesError(err))
+			} else {
+				dispatch(parseImagesData(data))
 			}
-		);
+		  });
 	}
 
 }

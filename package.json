@@ -13,6 +13,7 @@
   "dependencies": {
     "axios": "^0.16.2",
     "feather-icons": "^3.2.2",
+    "jsonp": "^0.2.1",
     "normalize.css": "^7.0.0",
     "prop-types": "^15.5.10",
     "react": "^15.6.1",

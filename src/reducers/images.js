@@ -8,7 +8,6 @@ const initialState = {
 }
 
 export default function(state = initialState, action ){
-	console.log(action);
 	switch(action.type){
 		case IMAGES_LOADING:
 			return { ...state, imagesLoading: !state.imagesLoading }

@@ -27,10 +27,7 @@ class Header extends Component {
 					<div className="logo-container">
 						<Link to="/" className="logo">SHENTS</Link>
 					</div>
-
 					<a className="menu-icon" onClick={this.showMenu} id="menu"><span></span><span></span><span></span></a>
-
-				
 				</div>
 			</header>	
 		);

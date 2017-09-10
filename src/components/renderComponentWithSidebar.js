@@ -13,9 +13,12 @@ export default function(ComposedComponent) {
 	class IncludeSidebar extends Component{
 
 		constructor(props){
-			super(props);
-			
+			super(props);	
 			this.handleCloseSidebar = this.handleCloseSidebar.bind(this);
+		}
+
+		componentWillMount(){
+			this.props.toggleSidebar(false);
 		}
 
 		componentWillReceiveProps(nextProps){
@@ -31,7 +34,7 @@ export default function(ComposedComponent) {
 		}
 
 		confineTabbing(){
-			console.log("hello");
+
 		}
 
 		handleCloseSidebar(){
@@ -54,9 +57,9 @@ export default function(ComposedComponent) {
 							</div>
 
 							<ul>
-								<li className="sidebar-menu-item"><a href="/" className="sidebar-menu-link">Home</a></li>
-								<li className="sidebar-menu-item"><a href="/contact" className="sidebar-menu-link">Contact</a></li>
-								<li className="sidebar-menu-item"><a href="/reviews" className="sidebar-menu-link">What they Say</a></li>
+								<li className="sidebar-menu-item"><Link to="/" className="sidebar-menu-link">Home</Link></li>
+								<li className="sidebar-menu-item"><Link to="/contact" className="sidebar-menu-link">Contact</Link></li>
+								<li className="sidebar-menu-item"><Link to="/reviews" className="sidebar-menu-link">What they Say</Link></li>
 							</ul>
 
 							<a href="https://homestars.com/companies/2849010-shents-renovation" className="homestars-link" target="_blank">
