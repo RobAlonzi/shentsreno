@@ -23,10 +23,6 @@ class Footer extends Component{
 		if(bounds.bottom > outerHeight)
 			return;
 
-			debugger;
-
-			//outerHeight - bounds.top - bounds.height
-		
 		this.setState({ marginTop : outerHeight - bounds.bottom });
 		return;
 	}
