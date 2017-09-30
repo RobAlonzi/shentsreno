@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import Rodal from "rodal";
+import { PlayCircle } from 'react-feather';
 
 import { makeRequest } from "../actions";
 
@@ -33,24 +34,40 @@ class PictureFeed extends Component{
 	}
 	
 	hide() {
+		let video = document.querySelector('video');
+		
+		if(video){
+			video.pause();
+			video.currentTime = 0;
+		}
+		
 		this.setState({ visible: false });
 	}
 
 	renderPictures(){
 		return this.props.images.images.map((picture) => {
+
+			const videoClass = picture.type === "video" ? "video-entry" : null;
+
 			return (
 				<a href="javascript:void(0)" onClick={() => this.show(picture)} key={picture.id} className="picture-feed-picture">
 					<img src={picture.images.standard_resolution.url} />
+					{ videoClass ? <PlayCircle className="video-icon" strokeWidth={1} /> : null }
 				</a>
 			);
 		});
 	}
 
 	renderModalContent(){
+		let video = this.state.currentPicture.videos; 
 		return (
 			<div>
-
-				<img src={this.state.currentPicture.images.standard_resolution.url} />
+				{ video ?
+					<video src={video.standard_resolution.url} width={video.standard_resolution.width} height={video.standard_resolution.height} controls>
+					</video>
+				: 
+					<img src={this.state.currentPicture.images.standard_resolution.url} />
+				}
 				<div className="ig-content">
 					<p>{ this.state.currentPicture.caption.text }</p>
 				</div>

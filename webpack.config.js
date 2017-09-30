@@ -17,8 +17,8 @@ function createConfig(isDebug){
 		new HtmlWebpackPlugin({template: "./src/index.html"}),
 	];
 
-	const cssLoader = { test: /\.css$/, use: ["style-loader", "css-loader"]};
-	const sassLoader = { test: /\.scss$/, use: ["style-loader", "css-loader", "sass-loader"] };
+	const cssLoader = { test: /\.css$/, use: ["style-loader", "css-loader", "postcss-loader"]};
+	const sassLoader = { test: /\.scss$/, use: ["style-loader", "css-loader", "sass-loader", "postcss-loader"] };
 	const appEntry = ["./src/main.js"];
 
 	if(!isDebug){
@@ -31,8 +31,8 @@ function createConfig(isDebug){
 			'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV)
 		}));
 
-		cssLoader.use = ExtractTextPlugin.extract({ use: "css-loader" });
-		sassLoader.use = ExtractTextPlugin.extract({ use: "css-loader!sass-loader"});
+		cssLoader.use = ExtractTextPlugin.extract({ use: "css-loader!postcss-loader" });
+		sassLoader.use = ExtractTextPlugin.extract({ use: "css-loader!postcss-loader!sass-loader"});
 	}
 
 

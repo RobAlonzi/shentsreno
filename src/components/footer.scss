@@ -5,6 +5,12 @@ footer{
 	color: #FFF;
 	padding: 20px;
 
+	&.sticky-footer{
+		position: fixed;
+		bottom: 0;
+		width: 100%;
+	}
+
 	> div{
 		display: flex;
 		justify-content: space-between;

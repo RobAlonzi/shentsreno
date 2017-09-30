@@ -10,6 +10,15 @@
     "dev": "./node_modules/.bin/gulp run:dev",
     "tests": "./node_modules/.bin/gulp run:tests"
   },
+  "browserslist": {
+    "production": [
+      "last 2 version",
+      "ie 9"
+    ],
+    "development": [
+      "last 1 version"
+    ]
+  },
   "dependencies": {
     "axios": "^0.16.2",
     "feather-icons": "^3.2.2",
@@ -50,6 +59,7 @@
     "jsdom": "^11.0.0",
     "node-sass": "^4.5.3",
     "optimize-css-assets-webpack-plugin": "^2.0.0",
+    "postcss-loader": "^2.0.6",
     "react-addons-test-utils": "^15.6.0",
     "rimraf": "^2.6.1",
     "sass-loader": "^6.0.6",

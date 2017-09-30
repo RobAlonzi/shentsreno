@@ -1,12 +1,14 @@
 @import "../variables";
 
 .section.section-hero{
-	margin-bottom: 200px;
-	margin-top: 200px;
+	margin:200px 10px;
+
+	@include mq("desktop"){
+		margin: 100px 10px;
+	}
 
 	@include mq("tablet-wide"){
-		margin-top: 40px;
-		margin-bottom: 20px;
+		margin:40px 10px 100px;
 	}
 
 	.page-wrap{
@@ -117,6 +119,7 @@
 @keyframes slideBox {   
 	0% {  
 		width:0%;
+		transform: translateX(0%);
 	}   
 	50% {     
 		width:100%;
@@ -124,7 +127,7 @@
 	}
 	100%{
 		width:100%;
-		transform: translateX(102%);
+		transform: translateX(615px);
 	}
   }
 

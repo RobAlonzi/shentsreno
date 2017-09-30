@@ -13,10 +13,14 @@
 	}
 }
 
-.section-contact .page-wrap{
+.section-contact.page-wrap{
 	display: flex;
-	justify-content: space-evenly;
+	justify-content: space-around;
 	flex-wrap: wrap;
+
+	@include mq("tablet"){
+		margin-bottom:75px;
+	}
 
 	.contact-text{
 		width:30%;

@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import { toggleSidebar } from "../actions";
 
 import Header from "./header";
+import Footer from "./footer";
 import Fade from "./transitions/fade";
 
 import "./sidebar.scss";
@@ -48,6 +49,7 @@ export default function(ComposedComponent) {
 						<div className={`wrapper ${this.props.sidebar ? "has-push-right" : ""} `}>
 							<Header />
 							<ComposedComponent {...this.props} />
+							<Footer />
 						</div>
 						<nav id="sidebar-right" className={`sidebar-menu ${this.props.sidebar ? "is-active" : null}`}>
 							<button className="sidebar-close" onClick={this.handleCloseSidebar}></button>

@@ -7,7 +7,7 @@ import "./footer.scss";
 class Footer extends Component{
 	constructor(props){
 		super(props);
-		this.state = { margin: 0 };
+		this.state = { marginTop: 0 };
 	}
 
 	componentDidMount(){
@@ -16,13 +16,18 @@ class Footer extends Component{
 		if(el === null)
 			return;
 	
+
 		const bounds = el.getBoundingClientRect(),
-			innerHeight = window.innerHeight;
-	
-		if(bounds.top > innerHeight)
+			outerHeight = document.documentElement.clientHeight;
+
+		if(bounds.bottom > outerHeight)
 			return;
+
+			debugger;
+
+			//outerHeight - bounds.top - bounds.height
 		
-		this.setState({ margin: innerHeight - (bounds.top + bounds.height - 18.5) });
+		this.setState({ marginTop : outerHeight - bounds.bottom });
 		return;
 	}
 
@@ -30,7 +35,7 @@ class Footer extends Component{
 
 	render(){
 		return (
-			<footer style={{ marginTop: this.state.margin }}>
+			<footer style={{ marginTop: this.state.marginTop }}>
 				<div className="page-wrap-wide">
 					<p>&copy; {new Date().getFullYear()}</p>
 					<ul>

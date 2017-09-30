@@ -3,7 +3,6 @@ import React, { Component } from "react";
 import HeroBar from "./heroBar";
 import PageDetails from "./pageDetails";
 import PictureFeed from "./pictureFeed";
-import Footer from "./footer";
 
 import "./home.scss";
 
@@ -18,7 +17,6 @@ export default class Home extends Component{
 				<HeroBar />
 				<PageDetails />
 				<PictureFeed />
-				<Footer />
 			</div>
 		);
 	}

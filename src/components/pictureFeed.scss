@@ -33,8 +33,21 @@
 
 			img{ transition: transform 0.3s; }
 
+			.video-icon{
+				color: rgba(255, 255, 255, 0.8);
+				height:15%;
+				position: absolute;
+				transition: transform 0.3s;
+				width:15%;
+
+				circle, polygon{
+					stroke-width: 1;
+				}
+			}
+
 			&:hover, &:focus{
-				img { transform: scale(1.1); }
+				img, .video-icon { transform: scale(1.1); }
+				.video-icon{ color: rgba(255, 255, 255, 0.9); }
 			}
 		}
 	}
