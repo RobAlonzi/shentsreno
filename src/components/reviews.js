@@ -3,6 +3,7 @@ import React from "react";
 import "./reviews.scss";
 
 const Reviews = (props) => {
+	document.title = "Shents Renovations | What They Say";
 	return (
 		<section className="section-reviews page-wrap">
 			<div className="reviews-intro">

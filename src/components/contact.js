@@ -4,6 +4,8 @@ import { MapPin, Phone, Mail, Instagram, Globe } from 'react-feather';
 import "./contact.scss";
 
 const Contact = (props) => {
+	document.title = "Shents Renovations | Contact Us";
+
 	return (
 		<section className="section-contact page-wrap">
 			<div className="contact-text">

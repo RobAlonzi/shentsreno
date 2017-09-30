@@ -9,6 +9,7 @@ import "./home.scss";
 export default class Home extends Component{
 	constructor(props){
 		super(props);
+		document.title = "Shents Renovations";
 	}
 
 	render(){
