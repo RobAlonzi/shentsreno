@@ -63,7 +63,7 @@ class PictureFeed extends Component{
 		return (
 			<div>
 				{ video ?
-					<video src={video.standard_resolution.url} width={video.standard_resolution.width} height={video.standard_resolution.height} controls>
+					<video src={video.standard_resolution.url} width="100%" height="auto" controls>
 					</video>
 				: 
 					<img src={this.state.currentPicture.images.standard_resolution.url} />

@@ -19,11 +19,11 @@
 	}
 
 	.details-panel{
-		width:33%;
-		padding: 0 15px;
+		width:30%;
+		padding: 0 3%;
 
 		@include mq("tablet-wide"){
-			width:40%;
+			width:45%;
 		}
 
 		@include mq("tablet-small"){
